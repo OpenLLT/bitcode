@@ -11,14 +11,14 @@ description = "bitcode is a bitwise binary serializer"
 exclude = ["fuzz/"]
 
 [package.metadata.docs.rs]
-features = ["derive", "serde", "std"]
+features = ["derive", "serde", "smol_str", "std"]
 
 [workspace]
 members = ["bitcode_derive"]
 
 [features]
 derive = ["dep:bitcode_derive"]
-std = ["serde?/std", "glam?/std", "arrayvec?/std"]
+std = ["serde?/std", "glam?/std", "arrayvec?/std", "smol_str?/std"]
 default = ["derive", "std"]
 
 [dependencies]
@@ -29,6 +29,7 @@ glam = { version = ">=0.21", default-features = false, optional = true }
 jiff = { version = "0.2.18", default-features = false, features = ["serde"], optional = true }
 rust_decimal = { version = "1.36", default-features = false, optional = true }
 serde = { version = "1.0", default-features = false, features = [ "alloc" ], optional = true }
+smol_str = { version = "0.3", default-features = false, optional = true }
 time = { version = "0.3", default-features = false, optional = true }
 uuid = { version = "1.10", default-features = false, optional = true }
 
